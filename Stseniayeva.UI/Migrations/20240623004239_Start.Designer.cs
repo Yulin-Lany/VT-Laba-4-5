@@ -11,7 +11,7 @@ using Stseniayeva.UI.Data;
 
 namespace Stseniayeva.UI.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20240623004239_Start")]
     partial class Start
     {

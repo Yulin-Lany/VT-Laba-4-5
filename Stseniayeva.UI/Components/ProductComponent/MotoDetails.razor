@@ -1,0 +1,20 @@
+﻿<h3>MotoDetails</h3>
+
+@if (Moto != null)
+{
+    <div class="card mt-5" style="width: 18rem;">
+        <img src="@Moto.Images" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Moto.MotoName</h5>
+            <p class="card-text">@Moto.Description</p>
+            <h4 class="badge bg-info">@Moto.SpeedMax км/ч </h4>
+        </div>
+    </div>
+}
+@code {
+    [Parameter]
+    public Moto Moto { get; set; }
+    [Parameter]
+    public EventCallback<Moto> DishChanged { get; set; }
+}
+

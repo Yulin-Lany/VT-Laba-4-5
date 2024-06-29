@@ -15,7 +15,7 @@ namespace Stseniayeva.Domain.Entities
         public string Description { get; set; } // описание 
         public int SpeedMax { get; set; } // MAX скорость
 
-        public string? Image { get; set; } // имя файла изображения 
+        public string? Images { get; set; } // имя файла изображения 
 
         // Навигационные свойства
         public int MotoGroupId { get; set; }

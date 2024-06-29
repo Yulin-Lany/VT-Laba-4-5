@@ -14,7 +14,7 @@ namespace Stseniayeva.Domain.Entities
         public string GroupName { get; set; }
 
 
-        public List<Moto> Motos { get; set; }
+
         public string NormalizedName { get; set; }
 
     }

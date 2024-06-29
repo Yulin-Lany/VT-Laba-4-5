@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Stseniayeva.API.Data;
+using Steniayeva.API.Data;
 using Stseniayeva.Domain.Entities;
 using Stseniayeva.Domain.Models;
 
-namespace Stseniayeva.API.Controllers
+namespace Steniayeva.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -177,7 +177,7 @@ namespace Stseniayeva.API.Controllers
             var url = $"{host}/Images/{fileName}";
 
             // Сохранить url файла в объекте
-            tovar.Image = url;
+            tovar.Images = url;
             await _context.SaveChangesAsync();
             return Ok();
         }

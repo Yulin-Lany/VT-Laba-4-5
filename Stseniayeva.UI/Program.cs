@@ -6,16 +6,18 @@ using Stseniayeva.UI.Services;
 using System.Security.Claims;
 using Stseniayeva.UI.Models;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Stseniayeva.Blazor.Services;
+using Stseniayeva.Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString));
 
 builder.Services.AddHttpClient<IProductService, ApiProductService>(opt
@@ -41,7 +43,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     options.Password.RequireLowercase = false;
     options.Password.RequireUppercase = false;
 })
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddAuthorization(opt =>
 {
     opt.AddPolicy("admin", p =>
@@ -80,3 +82,11 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+app.UseSession();
+
+builder.Services
+.AddHttpClient<IProductService<Moto>, Stseniayeva.Blazor.Services.ApiProductService>(c =>
+c.BaseAddress = new Uri("https://localhost:7002/api/dishes"));

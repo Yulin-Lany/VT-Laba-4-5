@@ -28,7 +28,7 @@ await DbInitializer.SeedData(app);
 app.UseStaticFiles();
 
 app.UseHttpsRedirection();
-
+app.UseStaticFiles();
 app.UseAuthorization();
 
 app.MapControllers();

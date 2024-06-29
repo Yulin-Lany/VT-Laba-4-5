@@ -1,6 +1,7 @@
-﻿@using Stseniayeva.Domain.Entities
+﻿@using Stseniayeva.Blazor.Services
+@using Stseniayeva.Domain.Entities
 @model Moto
-
+@inject IProductService<Moto> ProductService
 @{
     var request = ViewContext.HttpContext.Request;
 
@@ -8,14 +9,13 @@
 }
 <div class="col-4 p-4">
     <div class="card border-dark m-2">
-        <img class="card-img-top" src="@Model.Image" alt="No image available" />
+        <img class="card-img-top" src="@Model.Images" alt="No image available" />
         <div class="card-body">
             <h5 class="card-title">@Model.MotoName</h5>
             <p class="card-text">@Model.Description</p>
             <h5>
                 <span class="badge bg-secondary">
-                    @*  @Model.Calories
-                    калорий *@
+                    @Model.SpeedMax км/ч
                 </span>
             </h5>
         </div><!-- card-body -->

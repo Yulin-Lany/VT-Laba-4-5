@@ -1,0 +1,8 @@
+﻿@using Stseniayeva.UI.Models
+
+@model Stseniayeva.UI.Views.Cart.CartModel
+
+<a asp-action="Index" asp-controller="Cart" class="navbar-text ms-auto">
+    @Model.SpeedMax км/ч <i class="fa-solid fa-cart-shopping"></i>
+(@Model.Count)
+</a>

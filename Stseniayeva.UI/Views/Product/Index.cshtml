@@ -54,15 +54,16 @@
         </ul>
     </div>
 </div>
-@if (Model != null)
-{
-    <div class="card-group">
-        @foreach (var item in Model.Items)
-        {
-            <partial name="_ProductItemPartial" model="@item" />
-        }
-    </div>
-}
+
+    @if (Model != null)
+    {
+        <div class="card-group">
+            @foreach (var item in Model.Items)
+            {
+                <partial name="_ProductItemPartial" model="@item" />
+            }
+        </div>
+    }
 
 <div class="row">
     <nav aria-label="Page navigation example">

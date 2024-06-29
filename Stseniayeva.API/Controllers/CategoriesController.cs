@@ -77,7 +77,7 @@ namespace Stseniayeva.API.Controllers
     // POST: api/Categories
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
-    public async Task<ActionResult<MotoGroup>> PostCategory(MotoGroupy category)
+    public async Task<ActionResult<MotoGroup>> PostCategory(MotoGroup category)
     {
         _context.Categories.Add(category);
         await _context.SaveChangesAsync();

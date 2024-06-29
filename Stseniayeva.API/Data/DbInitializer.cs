@@ -1,4 +1,5 @@
-﻿using Stseniayeva.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Stseniayeva.Domain.Entities;
 
 namespace Stseniayeva.API.Data
 {
@@ -36,71 +37,71 @@ namespace Stseniayeva.API.Data
             new Moto {MotoName = "Adventure Touring",
                     Description = "Очень удобный",
                     SpeedMax = 200,
-                    Image = uri + "AdventureTouring.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Очень удобный")) },
+                    Images = uri + "AdventureTouring.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Touring"))},
 
                 new Moto { MotoName = "Luxury Touring",
                     Description = "Комфортный",
                     SpeedMax = 230,
-                    Image = uri + "LuxTouring.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Комфортный")) },
+                    Images = uri + "LuxTouring.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Touring")) },
 
 
                 new Moto {MotoName = "Classic Cruiser",
                     Description = "Стильный",
                     SpeedMax = 235,
-                    Image = uri + "ClassicCruiser.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Стильный")) },
+                    Images = uri + "ClassicCruiser.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Cruiser")) },
 
 
                 new Moto {MotoName = "Power Cruiser",
                     Description = "Мощный",
                     SpeedMax = 250,
-                    Image = uri + "Cruiser.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Мощный")) },
+                    Images = uri + "Cruiser.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Cruiser")) },
 
 
                 new Moto {MotoName = "Supermoto",
                     Description = "Дорогой",
                     SpeedMax = 110,
-                    Image = uri + "Enduro.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Дорогой")) },
+                    Images = uri + "Enduro.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Enduro")) },
 
                 new Moto {MotoName = "Dual Purpose", 
                     Description = "Двойного назначения", 
                     SpeedMax = 90, 
-                    Image = uri +  "Kuznechik.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Двойного назначения"))},
+                    Images = uri +  "Kuznechik.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Enduro"))},
 
                 new Moto {MotoName = "Super Sports", 
                     Description = "Самый быстрый", 
                     SpeedMax = 300, 
-                    Image = uri + "SuperSport.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Самый быстрый"))},
+                    Images = uri + "SuperSport.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Sport"))},
              
                 new Moto {MotoName = "Sports Street Naked", 
                     Description = "Идеальный", 
                     SpeedMax = 280, 
-                    Image = uri + "SportStrit.jpg",
-                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Идеальный"))},
+                    Images = uri + "SportStrit.jpg",
+                    Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Sport"))},
 
              new Moto {Id=9, MotoName = "Sports Touring", 
                  Description = "Практичный", 
                  SpeedMax = 180, 
-                 Image = uri + "Sport-Touring.jpg",
-                 Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Практичный"))},
+                 Images = uri + "Sport-Touring.jpg",
+                 Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Touring"))},
 
              new Moto {Id=10, MotoName = "Retro", 
                  Description = "Брутальный", 
                  SpeedMax = 120, 
-                 Image = uri + "Retro.jpg",
-                 Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Брутальный"))},
+                 Images = uri + "Retro.jpg",
+                 Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Klassic"))},
 
              new Moto {Id=11, MotoName = "Standart Street Naked", 
                  Description = "Фееричный", 
                  SpeedMax = 170, 
-                 Image = uri + "Naced.jpg",
-                 Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Фееричный"))}
+                 Images = uri + "Naced.jpg",
+                 Group = _categories.FirstOrDefault(c => c.NormalizedName.Equals("Klassic"))}
             };
 
                 await context.Motos.AddRangeAsync(_tovar);
